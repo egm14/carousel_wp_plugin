@@ -1,0 +1,90 @@
+
+/*--------------- Swipper carousel ----------------*/
+ /*Link Swiper's CSS*/
+ 
+
+  .swiper-container {
+      width: 100%;
+      height: -webkit-min-content;
+      height: -moz-min-content;
+      height: min-content;
+      vertical-align: baseline!important;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      height:-webkit-max-content;
+      height:-moz-max-content;
+      height:max-content;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      /*-webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;*/
+    }
+  
+    #carousel-containers .swiper-wrapper{
+    	-webkit-box-align: baseline!important;
+    	    -ms-flex-align: baseline!important;
+    	        align-items: baseline!important;
+    	margin-bottom:10px;
+    	height:150px;
+    	position:relative;
+    }
+    #carousel-containers .swiper-slide img.swiper-lazy.swiper-lazy-loaded{
+    	max-height:8rem;
+    	min-height:4rem;
+    	-o-transition: 0.6s ease;
+    	transition: 0.6s ease;
+    	-webkit-transition: 0.6s ease;
+    }
+    #carousel-containers .swiper-slide:hover img.swiper-lazy.swiper-lazy-loaded{
+    	-ms-transform:scale(1.2);
+    	    transform:scale(1.2);
+    	-webkit-transform:scale(1.2);
+    	-o-transition: 0.6s ease;
+    	transition: 0.6s ease;
+    	-webkit-transition: 0.6s ease;
+    }
+   /* #carousel-containers .contain-carousel{
+    	min-height:90px;
+    }*/
+    #carousel-containers .swiper-slide .entry-content{
+      display: flex;
+      flex-direction:column;
+      position: absolute;
+      top:2rem;
+    }
+    #carousel-containers .title-carousel{
+    	min-height:45px;
+    	max-width:115px;
+    	/*display:inline-block;*/
+      display:inline-flex;
+      justify-content: end;
+      flex-direction:column;
+    	margin-left:auto;
+    	margin-right:auto;
+      margin-bottom:10px;
+    }
+    #carousel-containers a.menu-container-title{
+    	text-align: center;
+    	font-size:12px;
+    	font-weight:bold;
+    	opacity:.8;
+    	color:#fff;
+    	line-height:normal;
+    }
+    #carousel-containers .swiper-slide:hover a.menu-container-title{
+    	text-decoration:none;
+    	opacity:1;
+    }
+    #carousel-containers .swiper-pagination{
+    	position:initial;
+    }
+ 
