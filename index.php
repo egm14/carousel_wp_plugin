@@ -108,9 +108,9 @@
 		//echo "Esto es una prueba";
 
 		//Adding content to present on the sidebar - Carousel
-		$args = array( 'post_type' => 'product', 'posts_per_page' => -1 );
+		$args = array( 'post_type' => 'product', 'posts_per_page' => -1 , 'orderby' => 'date',
+    'order' => 'ASC');
 		$loop = new WP_Query( $args );
-
 		echo' <!-- Swiper -->
 		  <div id="carousel-containers" class="swiper-container swiper-container-initialized swiper-container-horizontal">
 		    <div class="swiper-wrapper">';
@@ -121,17 +121,14 @@
 			      		<div class="title-carousel">';
 			      		echo '<a class="menu-container-title" href="'.get_post_permalink().'">'.get_the_title().'</a>'.
 			      		'</div>';
-			      		$campos_container = get_post_custom($post_id);
+			      		//var_dump($post_id);
+			      		//$campos_container = get_post_custom($post_id);
 			            $containerImage = wp_get_attachment_image_src(listing_image_get_meta('_listing_image_id'), 'Menu-container-150x90');
-
-			            //echo var_export($containerImage[0]);
-
 			                echo '<!--Post Image --><div class="contain-carousel">';
-			            if($containerImage[0] !== null) {
-			                //echo '<div class="entry-image">'.the_post_thumbnail( 'medium', array( 'alt' => get_the_title() ) ).'</div>';
-			                 echo '<a class="menu-container-image" href="'.get_post_permalink().'"><img data-src="'.$containerImage[0].'" alt="'.$containerImage[get_the_title()].'" class="swiper-lazy" ><div class="swiper-lazy-preloader"></div></a>'.'<br />';   
+			            if(isset($containerImage[0])) {
+			                 echo '<a class="menu-container-image" href="'.get_post_permalink().'"><img data-src="'.$containerImage[0].'" alt="" class="swiper-lazy" ><div class="swiper-lazy-preloader"></div></a>'.'<br />';   
 			            } else{
-			            	 echo '<a class="menu-container-image" href="'.get_post_permalink().'"><img data-src="'.get_stylesheet_directory_uri().'/assets/media/contianer-cover-moc-gray.png" alt="'.$containerImage[get_the_title()].'" class="swiper-lazy" ><div class="swiper-lazy-preloader"></div></a>'.'<br />';
+			            	 echo '<a class="menu-container-image" href="'.get_post_permalink().'"><img data-src="'.get_stylesheet_directory_uri().'/assets/media/contianer-cover-moc-gray.png" alt="" class="swiper-lazy" ><div class="swiper-lazy-preloader"></div></a>'.'<br />';
 			            }
 			            echo '</div><!-- /Post Image -->';
 					 // the_content();
